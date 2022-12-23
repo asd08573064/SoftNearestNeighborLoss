@@ -16,6 +16,11 @@ class SoftNearestNeighborLoss(nn.Module):
         return distances
 
     def forward(self, embeddings, labels):
+        """
+        Args:
+            embeddings: Batched embeddings to compute the SNNL.
+            labels: Labels of embeddings.
+        """
         batch_size = embeddings.shape[0]
         eps = 1e-9
         
